@@ -30,7 +30,7 @@ async def show_list(msg: types.Message):
 
     ffetch = []
     for number in fetch:
-        numbers = f"{number[0]} {number[1]} {number[2]} {number[-1]}\n\n"
+        numbers = f"{number[0]}   {number[1]}   {number[2]}   {number[-1]}\n\n"
 
         ffetch.append(numbers)
 

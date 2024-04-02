@@ -1,11 +1,13 @@
 from aiogram import executor
 from createbot import dp
 from data_base import databot_db
+from createbot import bot
 
 async def on_startup(_):
     print('Бот вышел в онлайн')
     databot_db.sql_start()
-
+    await bot.send_message(1318278369, "Бот вышел в онлайн и подключился к БД.")
+    
 from handlers import users, editdata, dellpeople, addpeople, findpeople
 
 users.register_handlers_users(dp)
