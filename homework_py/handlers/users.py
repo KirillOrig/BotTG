@@ -14,7 +14,6 @@ async def help(msg: types.Message):
 /help - показать список команд\n\
 /add_people - добавить человека в список\n\
 /edit_data - редактировать данные человека\n\
-/dell_data - удалить данные человека\n\
 /dell_people - удалить человека из списка\n\
 /show_list - показать телефонную книгу\n\
 /find_people - найти данные о человеке\n\

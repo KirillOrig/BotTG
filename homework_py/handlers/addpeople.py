@@ -42,6 +42,7 @@ async def Load_Mail(msg: types.Message, state: FSMContext):
         data['Mail'] = msg.text
 
     await databot_db.sql_add_command(state)
+    await msg.answer(f'Человек успешно добавлен в телефонную книгу')
     await state.finish()
 
 def register_handlers_addpeople(dp: Dispatcher):

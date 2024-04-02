@@ -1,10 +1,8 @@
-from aiogram.dispatcher import FSMContext
-from aiogram.dispatcher.filters.state import State, StatesGroup
 from aiogram import types, Dispatcher
 from createbot import dp
 from data_base import databot_db
 
-@dp.message_handler(commands=('edit_data'))
+# @dp.message_handler(commands=('edit_data'))
 async def edit_data(msg: types.Message):
     args = msg.get_args().split()
     if not args or len(args) < 3:
@@ -22,3 +20,6 @@ async def edit_data(msg: types.Message):
     databot_db.cur.execute(query, (value, name,))
     databot_db.base.commit()
     await msg.answer(f'Вы успешно изменили значение {column_name} на {value} для {name}')
+
+def register_handlers_edit_data(dp: Dispatcher):
+    dp.register_message_handler(edit_data, commands=['edit_data'])
